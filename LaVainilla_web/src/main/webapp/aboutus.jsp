@@ -1,0 +1,65 @@
+<%@page pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>La Vainilla | 香草屋 關於我們</title>
+	<link rel="stylesheet" type="text/css" href="css/lav.css">
+	<style>
+
+		div{
+		 width: 40%;
+		 margin: auto;
+		 position: relative;
+		 text-align: justify;
+	}
+	
+	#searchForm{float: right;}
+	
+	</style>
+	<script>
+	
+	</script>
+</head>
+<body>
+
+	<jsp:include page="./subviews/header.jsp" />
+
+	<%@include file="./subviews/nav.jsp" %>
+	
+	<article style="min-height: 70hv;">
+		<div>
+			<img src="images/about_us.png">
+				<h1>關於香草屋</h1>
+				<p>
+					「香草屋」是由熱愛香草及烘焙的人們築建而成，
+					香草屋傳遞著對於食材的熱愛，和對於味道的追求。
+					我們從世界各地精選出各類香草莢，並使用法國、日本進口頂級鮮奶油、乳酪等原料，
+					以精湛的烘焙技藝，呈現給客戶最頂級的美味體驗。
+				</p>	
+		</div>
+		
+		<div>
+			<h2>聯絡我們</h2>
+				<p>
+					<img src="images/store.png">台北門市<br>
+					<img src="images/address.png">台北市信義區市府路45號<br>
+					<img src="images/phone.png">02-8101-8800
+				</p>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.0094671684037!2d121.56374760846775!3d25.03375278199387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abb6da80a7ad%3A0xacc4d11dc963103c!2z5Y-w5YyXMTAx6LO854mp5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1706636923407!5m2!1szh-TW!2stw" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				
+				<p>
+					<img src="images/store.png">高雄門市<br>
+					<img src="images/address.png">高雄市大樹區學城路一段10號<br>
+					<img src="images/phone.png">07-656-8080
+				</p>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7359.897364288857!2d120.40004940455542!3d22.73014871717472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e111bbe79e287%3A0xdf4693162b1707e0!2z576p5aSn6YGK5qiC5LiW55WM!5e0!3m2!1szh-TW!2stw!4v1706638421982!5m2!1szh-TW!2stw" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+		
+	</article>
+	
+	<%@include file="./subviews/footer.jsp" %>	
+</body>
+</html>

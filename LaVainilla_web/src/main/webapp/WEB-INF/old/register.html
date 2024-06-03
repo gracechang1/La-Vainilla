@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>La Vainilla | 香草屋 註冊</title>
+	<link rel="stylesheet" type="text/css" href="css/lav.css">
+	<style>
+		body{
+			background-color: whitesmoke;
+		}
+	
+		.memberForm {
+	  		width: 40%; max-width: 50em; min-width:350px; margin:auto;
+		}
+		.memberForm label{
+			display: inline-block;min-width:5em;
+		}
+		.memberForm input,select{
+			background-color: lightgray;
+		}
+	</style>
+	<script>
+		function displayPwdHandler(theCheckbox){
+			pwd1.type=(theCheckbox.checked)?"text":"password";
+			pwd2.type=pwd1.type;
+		}
+		
+		function refreshCaptcha(){
+			captchaImg.src="images/captcha_register.png?refresh="+new Date();
+		}
+		
+	</script>
+</head>
+
+<body>
+	<header id="pageHeader">
+		<h1><a href="./"></h1>
+		<img src="images/trademark.PNG" alt="Logo" border="0" class="logo">
+		</a>
+		<hr>	
+	</header>
+	<nav id="pageNav">
+		<ul id="siteNav">
+			<a href="aboutus.jsp">關於我們</a>
+			<a href="product_list.jsp">產品項目</a>
+			<a href="login.jsp">登入會員</a>
+			<a href="register.html">註冊會員</a>
+			<a href="asked_question.jsp">FAQ常見說明</a>
+			<a href="exchange.html">交流區</a>
+		</ul>
+		<hr>
+	</nav>
+	
+	<article style="min-height: 70hv;">
+		<form autocomplete="off" class="memberForm" action="register.do" method="POST">
+			<fieldset>
+				<legend>會員註冊</legend>
+				<label>姓名:</label>
+				<input type="text" name="name" placeholder="請填寫真實中文姓名" required 
+					   title="請填寫2~20個字" pattern="[\u0020A-Za-z\u4e00-\u9fa5]{2,20}" minlength="2" maxlength="20"><br><br>
+				<label>生日:</label>
+				<input type="date" name="birthday" placeholder="請填寫生日" required" ><br><br>
+				<label>性別:</label>
+				<select name="gender"  required>
+					<option value="">請選擇性別</option>
+					<option value="M">男生</option>
+					<option value="F">女生</option>
+					<option value="O">其他</option>
+				</select>
+				<br><br>
+				<label>帳號:</label>
+				<input type="text" name="email" placeholder="請填寫email" required><br><br>
+				<label>設定密碼:</label>
+				<input class= "pwd" type="password" id="pwd1" name="pwd1" placeholder="請填寫密碼" required minlength="6" maxlength="20"><br>
+				<label>密碼確認:</label>
+				<input class= "pwd" type="password" id="pwd2" name="pwd2" placeholder="請再次輸入密碼" required minlength="6" maxlength="20">
+				<input type="checkbox" onchange="displayPwdHandler(this)"><label>顯示密碼</label><br><br>
+				<label>手機號碼:</label>
+				<input type="tel" name="phone" placeholder="請填寫手機號碼" required pattern="\d{10}"><br><br>
+				<label>地址:</label>
+				<input type="text" name="address" placeholder="請填寫地址" required><br>
+				<p>
+					<label>驗證碼:</label>
+					<input type="text" name="captcha" placeholder="請依圖片輸入驗證碼" required><br><br>
+					<img id="captchaImg" src="images/captcha_register.png" style="vertical-align: middle;">
+					<input type="button" value="更新驗證碼" onclick="refreshCaptcha()">
+				</p>
+				<input type="checkbox" name="subscribed1"><label>我同意貴公司客戶隱私權政策與客戶服務條款</label><br>
+				<input type="checkbox" name="subscribed2"><label>我願意收到貴公司商品及會員折扣訊息</label><br><br>
+				<input type="submit" value="立即註冊">
+			</fieldset>
+		</form>
+	</article>
+	<footer id="pageFooter">
+		<hr>
+		<img src="images/flag.png">版權所有 &copy; 香草屋 2023~
+	</footer>
+</body>
+
+</html>

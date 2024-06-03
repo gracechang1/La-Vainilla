@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		 xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+		 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" 
+		 version="4.0">
+  <display-name>LaVainilla_web</display-name>
+  
+  <servlet>
+  	<description>登入畫面使用captcha</description>
+  	<servlet-name>LoginCaptchaServlet</servlet-name>
+  	<servlet-class>uuu.lav.view.CaptchaServlet</servlet-class>
+  	<init-param>
+  		<param-name>len</param-name>
+		<param-value>4</param-value>  	
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>LoginCaptchaServlet</servlet-name>
+  	<url-pattern>/images/captcha_login.png</url-pattern>
+  </servlet-mapping>
+  
+  
+ <servlet>
+  	<description>註冊畫面使用captcha</description>
+  	<servlet-name>RegisterCaptchaServlet</servlet-name>
+  	<servlet-class>uuu.lav.view.CaptchaServlet</servlet-class>
+  	<init-param>
+  		<param-name>len</param-name>
+		<param-value>7</param-value>  	
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>RegisterCaptchaServlet</servlet-name>
+  	<url-pattern>/images/captcha_register.png</url-pattern>
+  </servlet-mapping>
+ 
+   <!-- session timeout -->
+  <session-config>
+  	<session-timeout>30</session-timeout>
+  	<cookie-config>
+  		<secure>true</secure>
+  	</cookie-config>
+  </session-config>
+ 
+   <security-constraint>
+	  <display-name>user_constraints</display-name>
+	  <web-resource-collection>
+	      <web-resource-name>all</web-resource-name>
+	      <description/>
+	      <url-pattern>/*</url-pattern>
+	      <http-method>GET</http-method>
+	      <http-method>POST</http-method>
+	  </web-resource-collection>
+	  <user-data-constraint>
+	      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+	  </user-data-constraint>
+  </security-constraint>
+  
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+<!-- 預設設定內部轉交，不觸發filter -->
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/WEB-INF/errors/404.jsp</location>
+  </error-page>
+  
+</web-app>

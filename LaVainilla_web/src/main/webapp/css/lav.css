@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300&display=swap');
+
+body{font-family: 'Noto Serif TC', serif; background-color: whitesmoke;}
+
+.logo{width: 5em; margin-left: 0.5em; opacity: 0.8; border: 3px solid #0F1D4C;}
+
+nav a{text-decoration: none; padding: 2px; font-weight: bold; color:  #0A3963;}
+
+nav a:hover{color: #E8A291;}
+
+article{min-height: 70vh;}
+
+.cartIconImg{vertical-align: middle;}
+
+footer{text-align: center; color: #0A3963}
+
